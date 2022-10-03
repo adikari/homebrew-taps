@@ -11,7 +11,7 @@ class Safebox < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_darwin_amd64.tar.gz"
-      sha256 "3529a4150dd3e9c6c7aeedc840f17f62604ae8f06f602dc553c022127701ecaa"
+      sha256 "f84759289573cce74f0ee69278787eb0141e6667a031f0fed53b275a4aa260aa"
 
       def install
         bin.install "safebox"
@@ -19,7 +19,7 @@ class Safebox < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_darwin_arm64.tar.gz"
-      sha256 "ca625adf2179982db74013ae4a9ac317b89847fc5bb20dfd4b7c617a0399966e"
+      sha256 "12478da85bf15fe540c3b0e41c386cec2cdfef62382d4766528ce3afbbfaa2f7"
 
       def install
         bin.install "safebox"
@@ -28,17 +28,17 @@ class Safebox < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_linux_arm64.tar.gz"
-      sha256 "27c5a61cc8f891fd8435970dba15aed1753434d4f9339ce65dc671a83291b138"
+    if Hardware::CPU.intel?
+      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_linux_amd64.tar.gz"
+      sha256 "fa1b9c1026757849a775b791a0050b73279086de668d16710f76e7710f1ab809"
 
       def install
         bin.install "safebox"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_linux_amd64.tar.gz"
-      sha256 "4af18cda8c55f9ba5373f2a708ab1d52a3afeb84eac579bef394cbe0eb4a8186"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_linux_arm64.tar.gz"
+      sha256 "bdeba347cf88012340e53da27a846214c79a12787549062e003d777bf2db54d5"
 
       def install
         bin.install "safebox"
