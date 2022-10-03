@@ -5,43 +5,55 @@
 class Safebox < Formula
   desc "A Fast and Flexible secret manager built with love by adikari in Go."
   homepage ""
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_darwin_amd64.tar.gz"
-      sha256 "f84759289573cce74f0ee69278787eb0141e6667a031f0fed53b275a4aa260aa"
+      url "https://github.com/adikari/safebox/releases/download/v1.0.1/safebox_1.0.1_darwin_amd64.tar.gz"
+      sha256 "171f7aa6c576d2fe88e6078bd6e0b213d219cad2d7ad7d2ccf23242977c7a899"
 
       def install
         bin.install "safebox"
+        bash_completion.install "completions/safebox.bash" => "safebox"
+        zsh_completion.install "completions/safebox.zsh" => "_safebox"
+        fish_completion.install "completions/safebox.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_darwin_arm64.tar.gz"
-      sha256 "12478da85bf15fe540c3b0e41c386cec2cdfef62382d4766528ce3afbbfaa2f7"
+      url "https://github.com/adikari/safebox/releases/download/v1.0.1/safebox_1.0.1_darwin_arm64.tar.gz"
+      sha256 "42b6e089580a7eeae937ddb2e4637c6fdb79bdd4f3e12dc8dbe04fa49831f614"
 
       def install
         bin.install "safebox"
+        bash_completion.install "completions/safebox.bash" => "safebox"
+        zsh_completion.install "completions/safebox.zsh" => "_safebox"
+        fish_completion.install "completions/safebox.fish"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_linux_amd64.tar.gz"
-      sha256 "fa1b9c1026757849a775b791a0050b73279086de668d16710f76e7710f1ab809"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/adikari/safebox/releases/download/v1.0.1/safebox_1.0.1_linux_arm64.tar.gz"
+      sha256 "b0b6976bd660720efea2c371eae000975bb6c24dee6fa5a7db6c632c5c77f132"
 
       def install
         bin.install "safebox"
+        bash_completion.install "completions/safebox.bash" => "safebox"
+        zsh_completion.install "completions/safebox.zsh" => "_safebox"
+        fish_completion.install "completions/safebox.fish"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/adikari/safebox/releases/download/v1.0.0/safebox_1.0.0_linux_arm64.tar.gz"
-      sha256 "bdeba347cf88012340e53da27a846214c79a12787549062e003d777bf2db54d5"
+    if Hardware::CPU.intel?
+      url "https://github.com/adikari/safebox/releases/download/v1.0.1/safebox_1.0.1_linux_amd64.tar.gz"
+      sha256 "d3e13971facacaac834e305f8484b2412b3de9619a16208f6fe7ec95a7891f10"
 
       def install
         bin.install "safebox"
+        bash_completion.install "completions/safebox.bash" => "safebox"
+        zsh_completion.install "completions/safebox.zsh" => "_safebox"
+        fish_completion.install "completions/safebox.fish"
       end
     end
   end
