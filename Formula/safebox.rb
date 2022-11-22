@@ -5,13 +5,13 @@
 class Safebox < Formula
   desc "A Fast and Flexible secret manager built with love by adikari in Go."
   homepage ""
-  version "1.1.10"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/monebag/safebox/releases/download/v1.1.10/safebox_1.1.10_darwin_arm64.tar.gz"
-      sha256 "d29ad5f69f694dcde4a697b710cb3b0d49dc4a0ea3416c0f5b37532dbb80b39e"
+      url "https://github.com/monebag/safebox/releases/download/v1.2.0/safebox_1.2.0_darwin_arm64.tar.gz"
+      sha256 "bc30f2d8539a6a291ac7acefb28bd542f77aed23296c27396040bd45fb6062c3"
 
       def install
         bin.install "safebox"
@@ -21,8 +21,8 @@ class Safebox < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/monebag/safebox/releases/download/v1.1.10/safebox_1.1.10_darwin_amd64.tar.gz"
-      sha256 "6c703145f05a66fc9decb2c8f603901c1f382c887d6198b415b29815c69d03db"
+      url "https://github.com/monebag/safebox/releases/download/v1.2.0/safebox_1.2.0_darwin_amd64.tar.gz"
+      sha256 "04e6edbc708fdf9f822c2cd8b64782f23a03bad31ea308809e563754a092f25e"
 
       def install
         bin.install "safebox"
@@ -35,8 +35,8 @@ class Safebox < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/monebag/safebox/releases/download/v1.1.10/safebox_1.1.10_linux_amd64.tar.gz"
-      sha256 "c66b8325d99ec4db4cdf2e009b939a57e0b06beb566c9aa18dc5f77404e20a7b"
+      url "https://github.com/monebag/safebox/releases/download/v1.2.0/safebox_1.2.0_linux_amd64.tar.gz"
+      sha256 "adc776c3e758f746f14ffc3f6e97eb3e67c2d489e6b2eda1f565c9d5b76ea9f4"
 
       def install
         bin.install "safebox"
@@ -46,8 +46,8 @@ class Safebox < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/monebag/safebox/releases/download/v1.1.10/safebox_1.1.10_linux_arm64.tar.gz"
-      sha256 "8ad24210ecf556e7f45bf10a8134a3d6648da82f5f3a96e46a63bc34f5fd48ca"
+      url "https://github.com/monebag/safebox/releases/download/v1.2.0/safebox_1.2.0_linux_arm64.tar.gz"
+      sha256 "bbc259c960dce03affbcfb43470e505368f1100634ab11d746cd3fb9a64322ac"
 
       def install
         bin.install "safebox"
