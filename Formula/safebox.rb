@@ -5,13 +5,13 @@
 class Safebox < Formula
   desc "A Fast and Flexible secret manager built with love by adikari in Go."
   homepage ""
-  version "1.2.3"
+  version "1.2.4"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/monebag/safebox/releases/download/v1.2.3/safebox_1.2.3_darwin_amd64"
-      sha256 "3aa3336c7c0c299cbeb11a9949e7d7c995bead2dcf72833a90ee887378b3dee9"
+    if Hardware::CPU.arm?
+      url "https://github.com/monebag/safebox/releases/download/v1.2.4/safebox_1.2.4_darwin_arm64"
+      sha256 "7c2869525ddaad91d780914b0538125ec331f3d567c8b827eebe2293d9bacd9e"
 
       def install
         bin.install "safebox"
@@ -20,9 +20,9 @@ class Safebox < Formula
         fish_completion.install "completions/safebox.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/monebag/safebox/releases/download/v1.2.3/safebox_1.2.3_darwin_arm64"
-      sha256 "9d5ecbc0d98c2efffda69133f2444a0480fd678c1bf884cc32379d389cac841a"
+    if Hardware::CPU.intel?
+      url "https://github.com/monebag/safebox/releases/download/v1.2.4/safebox_1.2.4_darwin_amd64"
+      sha256 "199b55029505db66ae7c5cb4118025cedc8c6862d3d184b076258876838898f2"
 
       def install
         bin.install "safebox"
@@ -34,9 +34,9 @@ class Safebox < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/monebag/safebox/releases/download/v1.2.3/safebox_1.2.3_linux_arm64"
-      sha256 "ad7ba2982501a922cda9ea517eab518e83731cbe5cbb4731c2e560dac9fe9646"
+    if Hardware::CPU.intel?
+      url "https://github.com/monebag/safebox/releases/download/v1.2.4/safebox_1.2.4_linux_amd64"
+      sha256 "50e1310f45989046948ad6e8376c917892935be4536bea781ccf0299dd7d7cbf"
 
       def install
         bin.install "safebox"
@@ -45,9 +45,9 @@ class Safebox < Formula
         fish_completion.install "completions/safebox.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/monebag/safebox/releases/download/v1.2.3/safebox_1.2.3_linux_amd64"
-      sha256 "7d2a995c9b0bdc22db9313c7888aebe3475cecfe6422dea080dbbbf61e2e072f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/monebag/safebox/releases/download/v1.2.4/safebox_1.2.4_linux_arm64"
+      sha256 "a8c55bcd1dcc0f14df66c32c3cc13e149139d7c8c67c2c31c158951ad16c8fca"
 
       def install
         bin.install "safebox"
